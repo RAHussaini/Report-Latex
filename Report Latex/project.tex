@@ -1,0 +1,53 @@
+
+%************************
+\documentclass[paper=a4, fontsize=12pt]{scrartcl} %decleration of class 
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{url}
+\usepackage[linktoc=all]{hyperref}
+\usepackage[numbers,sort&compress]{natbib}%refereces package
+\usepackage{notoccite} % referec cite arder
+\usepackage{tocloft} % used for contents
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5} % contener level
+\addcontentsline{toc}{section}{References}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\usepackage{graphicx}% graphics 
+\usepackage{wrapfig}% textwrap around image
+\usepackage{caption}% graphics caption
+\usepackage{subcaption}% graphics sub caption
+\graphicspath{{./contents/images/}}
+
+\hypersetup{
+	colorlinks=false,
+	%linkcolor=black,
+	pdfborder={0 0 0},
+%	filecolor=white,      
+	%urlcolor=cyan,
+	%pdftitle={Project},
+	%bookmarks=true
+%	pdfpagemode=FullScreen,
+}
+
+\date{\vspace{-5ex}}
+
+%***********Start of document*************
+\begin{document}
+%********************************
+\input{contents/title} % project title
+\tableofcontents % table of contents
+%\listoffigures
+%\addcontentsline{toc}{section}{\listfigurename}
+%\addcontentsline{toc}{section}{\listtablename}
+%\listoftables
+\clearpage
+\input{contents/index}% link to index.tex file
+
+\clearpage
+\bibliographystyle{unsrtnat}
+\bibliography{contents/references}%link to reference file
+
+
+%*********************************
+\end{document}
